@@ -147,7 +147,7 @@ const updateUser = async(req, res, next)=>{
     }
 }
 
-const deActivateUser = async (req, res, next)=>{
+const deactivateUser = async (req, res, next)=>{
     try{
         const userId = req.user.userId;
         const user = await User.findById(userId);
@@ -282,7 +282,7 @@ export {
     updateUserProfile,
     changePassword,
     updateUser,
-    deleteUser,
+    deactivateUser,
     toggleUserStatus,
     deleteUser,
     searchUser

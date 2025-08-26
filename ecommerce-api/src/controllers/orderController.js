@@ -221,7 +221,7 @@ async function deleteOrder(req, res) {
 }
 
 export {
-    createOrder,
+    getOrders,
     getOrderById,
     getOrdersByUser,
     createOrder,
