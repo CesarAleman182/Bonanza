@@ -21,6 +21,11 @@ const categorySchema = new mongoose.Schema({
         trim: true,
         default: 'https://placehold.co/800x600.png',
     },
+    parentCategory: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Category',
+        default: null,
+    }
 });
 
 const Category = mongoose.model('Category', categorySchema);
