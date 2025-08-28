@@ -2,7 +2,6 @@ import bycrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
 import User from '../models/user.js';
 import errorHandler from '../middleware/errorHandler.js';
-import { status } from 'express/lib/response';
 
 const generateToken = (userId, name, role) => {
     return jwt.sign({ userId, name, role },

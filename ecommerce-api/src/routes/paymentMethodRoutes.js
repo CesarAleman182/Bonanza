@@ -13,7 +13,7 @@ import {
 } from '../controllers/paymentMethodController.js';
 
 import authMiddleware from "../middleware/authMiddleware.js";
-import isAdmin from "../middleware/isAdminMiddleware";
+import isAdmin from "../middleware/isAdminMiddleware.js";
 
 const router = express.Router();
 

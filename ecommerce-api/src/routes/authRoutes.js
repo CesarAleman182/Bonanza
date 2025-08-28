@@ -8,7 +8,7 @@ const router = express.Router();
 router.post('/register', [
     body('name')
         .notEmpty().withMessage('Name is required')
-        .length({ min: 2, max: 50 })
+        .isLength({ min: 2, max: 50 })
         .withMessage('Name must be between 2 and 50 characters')
         .matches(/^[a-zA-Z0-9 ]*$/).withMessage('Name must be letter, numbers and spaces'),
 

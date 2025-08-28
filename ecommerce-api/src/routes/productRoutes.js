@@ -11,7 +11,7 @@ import {
 } from '../controllers/productController.js';
 
 import authMiddleware from "../middleware/authMiddleware.js";
-import isAdmin from "../middleware/isAdminMiddleware";
+import isAdmin from "../middleware/isAdminMiddleware.js";
 import validate from "../middleware/validation.js";
 import { query } from 'express-validator';
 

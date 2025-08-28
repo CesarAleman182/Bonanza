@@ -2,7 +2,6 @@ import express from 'express';
 import dotenv from 'dotenv';
 import dbConnection from './src/config/database.js';
 import routes from './src/routes/index.js';
-import dbConnection from './src/config/database.js';
 import logger from './src/middleware/logger.js';
 import setupGlobalErrorHandler from './src/middleware/globalErrorHandler.js'
 import errorHandler from './src/middleware/errorHandler.js';

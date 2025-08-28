@@ -8,9 +8,8 @@ const dbConnection = async () => {
         const dbURI = process.env.MONGODB_URI;
         const dbName = proccess.env.MONGOD_DB;
 
-        await mongoose.connect(`${dbURI}/${dbName}`);
-
-        console.log('MongoDB is connected');
+        await mongoose.connect(`${dbURI}/${dbName}`, {});
+        console.log(`MongoDB is connected`);
     }
     catch (error) {
         console.log(error);
