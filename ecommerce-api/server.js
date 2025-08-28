@@ -1,14 +1,14 @@
 import express from 'express';
 import dotenv from 'dotenv';
-import dbConnection from './src/config/database.js';
 import routes from './src/routes/index.js';
-import logger from './src/middleware/logger.js';
-import setupGlobalErrorHandler from './src/middleware/globalErrorHandler.js'
-import errorHandler from './src/middleware/errorHandler.js';
+import dbConnection from './src/config/database.js';
+import logger from './src/middlewares/logger.js';
+import setupGlobalErrorHandlers from './src/middlewares/globalErrorHandler.js';
+import errorHandler from './src/middlewares/errorHandler.js'; 
 
 dotenv.config();
 
-setupGlobalErrorHandler();
+setupGlobalErrorHandlers();
 
 const app = express();
 dbConnection();
@@ -29,9 +29,8 @@ app.use((req, res) => {
         url: req.originalUrl,
     });
 });
-
 app.use(errorHandler);
 
-    app.listen(process.env.PORT, () => {
-        console.log(`Server running on http://localhost:${process.env.PORT}`);
-    });
+app.listen(process.env.PORT, () => {
+    console.log(`Server running on http://localhost:${process.env.PORT}`);
+});

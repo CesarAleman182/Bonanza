@@ -4,14 +4,18 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 const dbConnection = async () => {
-    try{
+    try {
         const dbURI = process.env.MONGODB_URI;
-        const dbName = proccess.env.MONGOD_DB;
+        const dbName = process.env.MONGODB_DB;
 
-        await mongoose.connect(`${dbURI}/${dbName}`, {});
+        await mongoose.connect(`${dbURI}/${dbName}`, {
+            // If you use MongoDB < 8 you have to use this:
+            //useNewUrlParser:true,
+            //useUnifiedTopology:true
+        });
+
         console.log(`MongoDB is connected`);
-    }
-    catch (error) {
+    } catch (error) {
         console.log(error);
         process.exit(1);
     }
