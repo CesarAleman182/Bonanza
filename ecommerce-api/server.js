@@ -2,9 +2,9 @@ import express from 'express';
 import dotenv from 'dotenv';
 import routes from './src/routes/index.js';
 import dbConnection from './src/config/database.js';
-import logger from './src/middlewares/logger.js';
-import setupGlobalErrorHandlers from './src/middlewares/globalErrorHandler.js';
-import errorHandler from './src/middlewares/errorHandler.js'; 
+import logger from './src/middleware/logger.js';
+import setupGlobalErrorHandlers from './src/middleware/globalErrorHandler.js';
+import errorHandler from './src/middleware/errorHandler.js'; 
 
 dotenv.config();
 
@@ -29,6 +29,7 @@ app.use((req, res) => {
         url: req.originalUrl,
     });
 });
+
 app.use(errorHandler);
 
 app.listen(process.env.PORT, () => {
